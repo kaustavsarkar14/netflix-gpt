@@ -4,7 +4,7 @@ import Browse from "./Browse";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
-import { addUser } from "../redux/userSlice";
+import { addUser, removeUser } from "../redux/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Body = () => {
@@ -25,6 +25,7 @@ const Body = () => {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid, email, displayName }));
       } else {
+        dispatch(removeUser())
       }
     });
   }, []);
