@@ -7,23 +7,27 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isLoading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+
   const handleButtonClick = (e) => {
     e.preventDefault();
+    setLoading(true);
     const message = validateInput(email.current.value, password.current.value);
     setErrorMessage(message);
-    if (message) return;
+    if (message) {
+      setLoading(false);
+      return;
+    }
     if (isSignUp) {
       createUserWithEmailAndPassword(
         auth,
@@ -40,7 +44,6 @@ const Login = () => {
               console.log("profile updated");
               const { uid, email, displayName } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName }));
-              navigate("/browse");
             })
             .catch((error) => {
               console.log(error);
@@ -49,7 +52,8 @@ const Login = () => {
         .catch((error) => {
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
-        });
+        })
+        .finally(() => setLoading(false));
     } else {
       signInWithEmailAndPassword(
         auth,
@@ -59,12 +63,12 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
-        });
+        })
+        .finally(() => setLoading(false));
     }
   };
 
@@ -111,9 +115,24 @@ const Login = () => {
           )}
           <button
             onClick={(e) => handleButtonClick(e)}
-            className="p-4 mt-10 mb-4 bg-red-600 font-medium w-full rounded-md"
+            className="p-3 mt-10 mb-4 bg-red-600 font-medium w-full rounded-md flex justify-center"
           >
-            {isSignUp ? "Sign Up" : "Sign In"}
+            {isLoading ? (
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="mr-2 animate-spin"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z"></path>
+              </svg>
+            ) : isSignUp ? (
+              "Sign Up"
+            ) : (
+              "Sign In"
+            )}
           </button>
           <p className="my-4">
             <span className="text-gray-400">
