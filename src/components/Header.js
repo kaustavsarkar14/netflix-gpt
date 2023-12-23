@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../redux/userSlice";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,29 +18,26 @@ const Header = () => {
       });
   };
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid, email, displayName }));
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(addUser({ uid, email, displayName, photoURL }));
         navigate("/browse");
       } else {
         dispatch(removeUser());
         navigate("/");
       }
     });
+    return () => unsubscribe();
   }, []);
   return (
     <div className="absolute bg-gradient-to-b from-black px-8 py-1 w-full z-10 flex justify-between items-center">
-      <img
-        className="w-36"
-        src="https://ongpng.com/wp-content/uploads/2023/04/7.Netflix-Logo-1728x734-1.png"
-        alt="logo"
-      />
+      <img className="w-36" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex gap-3">
           <img
-            className="h-10 w-10"
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            className="h-10 w-10 rounded-sm"
+            src={user.photoURL}
             alt="user logo"
           />
           <button

@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
+import { LOGIN_BG_IMAGE, getRandomPhotoURL } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -36,14 +37,15 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
+            photoURL : getRandomPhotoURL()
           })
             .then(() => {
-              console.log("profile updated");
-              const { uid, email, displayName } = auth.currentUser;
-              dispatch(addUser({ uid, email, displayName }));
+              
+              const { uid, email, displayName,photoURL } = auth.currentUser;
+              dispatch(addUser({ uid, email, displayName, photoURL }));
             })
             .catch((error) => {
               console.log(error);
@@ -62,7 +64,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+         
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -81,7 +83,7 @@ const Login = () => {
       <div>
         <img
           className="opacity-80"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/6b2842d1-2339-4f08-84f6-148e9fcbe01b/IN-en-20231218-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={LOGIN_BG_IMAGE}
           alt="login background image"
         />
       </div>
