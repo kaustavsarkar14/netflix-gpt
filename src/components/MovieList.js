@@ -2,7 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log(title, movies);
+  
   if(!movies) return
   return (
     <div className="flex flex-col gap-4 py-4" >
