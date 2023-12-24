@@ -39,7 +39,7 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
   return (
-    <div className={"fixed bg-gradient-to-b from-black  md:px-8 py-1 w-full z-10 flex justify-between items-center "+(isScrolling && "bg-black bg-opacity-50 backdrop-blur-md")}>
+    <div className={"fixed bg-gradient-to-b from-black  md:px-8 py-1 w-full z-20 flex justify-between items-center "+(isScrolling && "bg-black bg-opacity-50 backdrop-blur-md")}>
       <img className="w-36" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex gap-3">
