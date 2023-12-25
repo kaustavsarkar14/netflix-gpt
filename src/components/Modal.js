@@ -3,7 +3,7 @@ import { API_OPTIONS } from "../utils/constants";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const Modal = ({ setModalOpen, movie }) => {
-    const [video, setVideo] = useState(null)
+  const [video, setVideo] = useState(null);
   const modal = useRef();
   const modalContainer = useRef();
   const closeButton = useRef();
@@ -18,7 +18,7 @@ const Modal = ({ setModalOpen, movie }) => {
     );
     const trailer =
       filteredData.length == 0 ? data.results[0] : filteredData[0];
-    setVideo(trailer.key)
+    setVideo(trailer.key);
   };
   useEffect(() => {
     fetchVideo();
@@ -44,12 +44,14 @@ const Modal = ({ setModalOpen, movie }) => {
         ref={modal}
         className="w-[95%]  md:w-[50%] min-h-[50vh]  bg-gray-600 mb-20 md:mb-0 relative rounded-md overflow-hidden"
       >
-        {video && <iframe
-          className="w-full aspect-video md:h-auto"
-          src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&controls=0&loop=1`}
-          title="Aquaman and the Lost Kingdom | Mouthful of Water Challenge"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>}
+        {video && (
+          <iframe
+            className="w-full aspect-video md:h-auto"
+            src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&controls=0&loop=1`}
+            title="Aquaman and the Lost Kingdom | Mouthful of Water Challenge"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        )}
         <div className="absolute bottom-0 p-8 w-full h-full flex flex-col justify-end items-start bg-gradient-to-t from-black gap-3">
           <h1 className="text-md md:text-4xl font-semibold">{movie.title}</h1>
           <p className="text-xs md:text-sm">{movie.overview}</p>
