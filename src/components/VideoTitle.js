@@ -9,7 +9,6 @@ const VideoTitle = ({ title, overview }) => {
     (state) => state.movies.nowPlayingMovies
   );
   const trailerVideo = useSelector((state) => state.movies.trailerVideo);
-  console.log(nowPlayingMovies);
   const [isModalOpen, setModalOpen] = useState(false);
   return (
     <div className="absolute bg-gradient-to-t md:bg-gradient-to-r from-black min-h-[50%] md:min-h-screen md:px-10 px-3 pt-[16%] md:pt-[10%] flex flex-col gap-4">
@@ -25,7 +24,10 @@ const VideoTitle = ({ title, overview }) => {
           <PlayArrowRoundedIcon />
           <h1>Play</h1>
         </button>
-        <a href={`https://www.youtube.com/watch?v=${trailerVideo.key}`} target="_blank" >
+        <a
+          href={`https://www.youtube.com/watch?v=${trailerVideo?.key}`}
+          target="_blank"
+        >
           <button className="flex gap-2 justify-center items-center bg-white bg-opacity-20 hover:bg-opacity-10 backdrop-blur-md text-white w-36 p-2 font-semibold rounded-lg">
             <InfoOutlinedIcon />
             <h1>More info</h1>
