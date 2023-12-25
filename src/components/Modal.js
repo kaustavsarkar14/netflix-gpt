@@ -42,7 +42,7 @@ const Modal = ({ setModalOpen, movie }) => {
     >
       <div
         ref={modal}
-        className="w-[95%]  md:w-[50%] min-h-[50vh]  bg-gray-600 mb-20 md:mb-0 relative"
+        className="w-[95%]  md:w-[50%] min-h-[50vh]  bg-gray-600 mb-20 md:mb-0 relative rounded-md overflow-hidden"
       >
         {video && <iframe
           className="w-full aspect-video md:h-auto"

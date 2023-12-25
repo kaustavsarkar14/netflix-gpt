@@ -32,7 +32,7 @@ const MovieCard = ({ movie }) => {
       {isHovering && (
         <div className="absolute flex gap-4 flex-col justify-between items-start bottom-0 p-1 md:p-5  w-full">
           <h1 className="md:text-xl text-sm font-semibold">
-            {movie.original_title}
+            {movie.title}
           </h1>
           <div className="flex gap-0 justify-start items-center">
             <StarRoundedIcon sx={{ width: "1.5rem", marginBottom: "2px" }} />

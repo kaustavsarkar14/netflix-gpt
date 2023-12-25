@@ -24,7 +24,7 @@ const GptSearchBar = () => {
     dispatch(addGptMovies({ movieNames: gptMovies, movieResults: movies }));
   };
   return (
-    <div className="flex justify-center items-center h-[60vh] md:h-[70vh] overflow-hidden md:mb-40 relative z-10">
+    <div className="flex justify-center items-center h-[60vh] md:h-[70vh] overflow-hidden md:mb-40 relative z-0">
       <div className="absolute w-full hfull top-0 h-[60vh] md:h-[70vh] bg-gradient-to-t from-black flex justify-center items-center">
         <form className="flex justify-center items-center w-[90%] md:w-[40%] gap-3 relative z-20 flex-wrap">
           <input
