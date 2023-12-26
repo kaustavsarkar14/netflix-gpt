@@ -1,5 +1,5 @@
-# Netflix ![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/6cd3a436-9f15-4c5f-bcd8-745c2690cce8)
-GPT
+ ![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/6cd3a436-9f15-4c5f-bcd8-745c2690cce8)
+# NetflixGPT
 ### A movie browsing app integrated with GPT 3.5 AI Search feature 🚀. 
 ## Tech Stack 
 1.[React.js](https://reactjs.org/)
@@ -30,13 +30,13 @@ GPT
 - Responsive and Clean UI
 - Optimized using Memoization
 ## Desktop 
-![pc-signin](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/f2704d06-3b40-45b8-aaf6-348e389ce980)
-![pc-search-page](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/33308f19-84ba-4657-ad81-1fcd7a176daf)
-![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/0c6a2047-ee62-4ca6-b6a2-def49c47b130)
-![pc-movielist](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/c579a4ad-51a7-4680-ba56-827712038d5d)
-![pc-modal](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/89882ff6-4745-42f9-9ae2-51ee236bbede)
+- ![pc-signin](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/f2704d06-3b40-45b8-aaf6-348e389ce980)
+- ![pc-search-page](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/33308f19-84ba-4657-ad81-1fcd7a176daf)
+- ![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/0c6a2047-ee62-4ca6-b6a2-def49c47b130)
+- ![pc-movielist](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/c579a4ad-51a7-4680-ba56-827712038d5d)
+- ![pc-modal](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/89882ff6-4745-42f9-9ae2-51ee236bbede)
 ## Mobile 
-![mobile](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/3aff135e-0208-4dd5-afb4-90963acfb32c)
+- ![mobile](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/3aff135e-0208-4dd5-afb4-90963acfb32c)
 
 
 # How to Start the Project on you LocalHost
