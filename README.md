@@ -1,10 +1,47 @@
-# Getting Started with Create React App
+# Netflix ![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/6cd3a436-9f15-4c5f-bcd8-745c2690cce8)
+GPT
+### A movie browsing app integrated with GPT 3.5 AI Search feature 🚀. 
+## Tech Stack 
+1.[React.js](https://reactjs.org/)
+ 2. [Redux Toolkit](https://redux-toolkit.js.org/) 
+ 3.  [Firebase](https://firebase.google.com/)
+ 4. [OpenAI GPT API](https://beta.openai.com/) 
+ 5. [Tailwind CSS](https://tailwindcss.com/) 
+ 6. [React Router](https://reactrouter.com/)
+ 7. [TMDB API](https://www.themoviedb.org/documentation/api)
+## Features
+- Login/Sign Up
+    - Sign In /Sign up Form
+    - Firebase Authentication
+    - redirect to Browse Page/Login Page on Auth status change.
+- Browse (after authentication)
+	- Fetch movies from TMDB
+    - Main Movie
+        - Tailer in Background
+        - Title & Description
+     - Hover to view rating
+     - Click on card to view more details
+- AI Search 
+    - Search Bar
+	    - Uses GPT 3.5 API to get suggestions 
+    - Movie Suggestions
+	    - Show search results 
+	    - Show Shimmer UI while loading
+- Responsive and Clean UI
+- Optimized using Memoization
+## Desktop 
+![pc-signin](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/f2704d06-3b40-45b8-aaf6-348e389ce980)
+![pc-search-page](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/33308f19-84ba-4657-ad81-1fcd7a176daf)
+![pc-home](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/0c6a2047-ee62-4ca6-b6a2-def49c47b130)
+![pc-movielist](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/c579a4ad-51a7-4680-ba56-827712038d5d)
+![pc-modal](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/89882ff6-4745-42f9-9ae2-51ee236bbede)
+## Mobile 
+![mobile](https://github.com/kaustavsarkar14/netflix-gpt/assets/93545845/3aff135e-0208-4dd5-afb4-90963acfb32c)
+
+
+# How to Start the Project on you LocalHost
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -14,10 +51,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -29,42 +62,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
