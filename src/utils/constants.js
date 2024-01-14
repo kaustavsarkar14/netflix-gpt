@@ -1,5 +1,5 @@
 export const LOGO_URL =
-  "https://ongpng.com/wp-content/uploads/2023/04/7.Netflix-Logo-1728x734-1.png";
+  "https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png";
 export const LOGIN_BG_IMAGE =
   "https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/6b2842d1-2339-4f08-84f6-148e9fcbe01b/IN-en-20231218-popsignuptwoweeks-perspective_alpha_website_large.jpg";
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500";
